@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <title>SimilarQ</title>
+</head>
+<body class="bg-neutral-700">
+    <div class="flex flex-col items-center h-screen w-2/3 mx-auto bg-stone-700 rounded-lg my-4 p-6">
+        <div>
+            <h1 class="w-full m-3 p-2 font-extrabold text-5xl font-sans text-slate-300 text-center">SimilarQ</h1>
+        </div>
+        <div class="flex w-full flex-col">
+            <p class="pb-2 text-stone-300 text-center text-base">Enter any Leetcode Question to get Similar questions for Practice</p>
+            <p class="pb-2 text-stone-300 text-center text-base">Note if Entering the name does not work Try Question link (In the format <code>https://leetcode.com/problems/problem-name/</code>)</p>
+            <form id='input-section' class="flex">
+                <input type="text" id="url-contents" class="w-11/12 rounded-lg m-1 p-1 text-sm" placeholder="Enter Question Name or Question Link"/>
+                <button type="submit" class="w-1/12 text-zinc-800 bg-green-400 rounded-md m-1 p-1 hover:text-white hover:bg-green-600">Enter</button>
+            </form>
+        </div>
+        <div class="w-full flex m-4">
+            <button type="submit" class="text-zinc-800 w-1/12 bg-green-400 rounded-md h-10 hover:bg-green-600 hover:text-white">Prev</button>
+
+
+            <table class="mx-4 border-collapse text-white w-11/12">
+                <thead>
+                    <tr class="bg-zinc-700 text-center">
+                        <th class="border border-slate-300 w-auto">Question</th>
+                        <th class="border border-slate-300 w-1/6">Similarity Score</th>
+                        <th class="border border-slate-300 w-auto">Tags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-neutral-600">
+                        <td class="border border-slate-300 p-2 text-center"><a href="something.com" class="hover:text-blue-400 transition-colors">Question name</a></td>
+                        <td class="border border-slate-300 p-2 text-center">0.82</td>
+                        <td class="border border-slate-300 p-2 text-center">
+                            <div class="flex flex-wrap text-xs">
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Arrays</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Priority Queue</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Tries</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-neutral-600">
+                        <td class="border border-slate-300 p-2 text-center"><a href="something.com" class="hover:text-blue-400 transition-colors">Question name</a></td>
+                        <td class="border border-slate-300 p-2 text-center">0.82</td>
+                        <td class="border border-slate-300 p-2 text-center">
+                            <div class="flex flex-wrap text-xs">
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Arrays</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Priority Queue</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Tries</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-neutral-600">
+                        <td class="border border-slate-300 p-2 text-center"><a href="something.com" class="hover:text-blue-400 transition-colors">Question name</a></td>
+                        <td class="border border-slate-300 p-2 text-center">0.82</td>
+                        <td class="border border-slate-300 p-2 text-center">
+                            <div class="flex flex-wrap text-xs">
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Arrays</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Priority Queue</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Tries</div>
+                                <div class="border-white border p-1 rounded-full bg-zinc-700 m-1">Dynamic Programming</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <button type="submit" class="text-zinc-800 w-1/12 bg-green-400 rounded-md h-10 hover:bg-green-600 hover:text-white">Next</button>
+        </div>
+    </div>
+    <div class="w-screen bg-stone-700 h-12 border-t border-t-white p-2 flex justify-evenly text-white">
+        <p><a href="somethingelse.com" class="text-blue-300 hover:text-green-500">Link</a> to the site's Repository with all the similarity data and embeddings</p>
+        <p><a href="somethingelse.com" class="text-blue-300 hover:text-green-500">Link</a> to the Repository with all Leetcode Solutions</p>
+    </div>
+</body>
+<script>
+    document.getElementById('input-section').addEventListener('submit',(event)=>{
+        event.preventDefault();
+        url=document.getElementById('url-contents');
+        file_cnt=url.value;
+        file="";
+        // console.log(file_cnt);
+        if(file_cnt.startsWith('https')){
+            file=file_cnt.split('/');
+            file=file[4]
+        }else{
+            file=(file_cnt.split(' ').join('-'));
+            file=file.toLowerCase();
+        }
+        console.log(file);
+        // console.log(url);
+    })
+</script>
+</html>
