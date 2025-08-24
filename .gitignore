@@ -1,4 +1,6 @@
 package.json
 __pycache__
-LeetCode-Solutions_master
-node_modules
+/node_modules
+env
+.env
+/data/lc_repo

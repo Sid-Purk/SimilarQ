@@ -1,9 +1,0 @@
-# Time:  O(m + n)
-# Space: O(m + n)
-
-SELECT p.product_name, 
-       s.year, 
-       s.price 
-FROM   sales AS s 
-       INNER JOIN product AS p 
-               ON s.product_id = p.product_id 
