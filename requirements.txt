@@ -5,7 +5,6 @@ pandas
 fastapi==0.116.1
 python-dotenv==1.1.1
 pinecone==7.3.0
-redis
 pymongo==4.14.0
 requests==2.32.4
 torch==2.8.0
