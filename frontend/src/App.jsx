@@ -34,7 +34,7 @@ function App() {
     setLoading(true);
     setAlert({open:false, message:""});
 
-    const verifyRes=await fetch('http://localhost:8000/api/verify-question',{
+    const verifyRes=await fetch('https://similarq.onrender.com/api/verify-question',{
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({query:input})
@@ -48,7 +48,7 @@ function App() {
       return
     }
 
-    const simResponse=await fetch('http://localhost:8000/api/similar_search',{
+    const simResponse=await fetch('https://similarq.onrender.com/api/similar_search',{
       method:"POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({query:verifyData.metadata})
