@@ -4,3 +4,4 @@ __pycache__
 env
 .env
 /data/lc_repo
+/leetcode_unixcoder_final
