@@ -19,7 +19,7 @@ app.add_exception_handler(429, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=['https://similar-q.vercel.app'],
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*']
