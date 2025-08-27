@@ -1,7 +1,8 @@
 import os
 import zipfile
 import gdown
-from app.config import MODEL_ID
+
+MODEL_ID=os.getenv("MODEL_ID")
 
 MODEL_ZIP_PATH= "leetcode_unixcoder_final.zip"
 MODEL_DIR=os.path.join(os.path.dirname(__file__),"leetcode_unixcoder_final")
