@@ -11,3 +11,4 @@ torch==2.8.0
 slowapi==0.1.9
 uvicorn==0.35.0
 gdown
+huggingface-hub==0.34.4
