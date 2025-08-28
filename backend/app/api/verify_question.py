@@ -47,13 +47,6 @@ async def verify_question(request: Request):
     if bool(q):
         return {"valid": bool(q), "metadata":clean(q)}
 
-    l=[]
-    for t in query.split(' '):
-        if (t.startswith("I") or t.startswith("i")) and len(set(t))==1:
-            l.append(t.upper())
-        else:
-            l.append(t.title())
-    title=' '.join(l)
-    q=question_col.find_one({"title":title})
+    q=question_col.find_one({"title":query})
     print(q)
     return {"valid":bool(q), "metadata":clean(q)}
