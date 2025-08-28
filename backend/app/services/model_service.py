@@ -13,3 +13,5 @@ def get_model():
             model_path=os.path.abspath(os.path.join(os.path.dirname(__file__),"leetcode_unixcoder_final"))
             _model_instance = SentenceTransformer(model_path)
         return _model_instance
+
+model=get_model()
