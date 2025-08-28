@@ -55,5 +55,5 @@ async def verify_question(request: Request):
             l.append(t.title())
     title=' '.join(l)
     q=question_col.find_one({"title":title})
-    print(title)
+    print(q)
     return {"valid":bool(q), "metadata":clean(q)}
