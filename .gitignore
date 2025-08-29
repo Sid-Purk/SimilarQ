@@ -4,3 +4,4 @@ env
 .env
 /data/lc_repo
 /backend/app/services/leetcode_unixcoder_final
+/unixcoder_for_leetcode_solution_embedding/
